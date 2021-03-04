@@ -4,9 +4,10 @@
   "description": "Example architecture for a Node-Express API with winston logging, and Mocha + Chai unit tests",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon -L app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=production node app.js",
+    "dev": "NODE_ENV=develop nodemon -L app.js",
+    "test": "NODE_ENV=test nyc mocha --recursive",
+    "coverage": "nyc report --reporter=text-lcov --reporter=lcov"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "chai": "^4.3.0",
     "mocha": "^8.3.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "nyc": "^15.1.0"
   }
 }

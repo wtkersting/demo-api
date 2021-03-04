@@ -164,3 +164,9 @@ In the instance of a database utility, it would make sense to define a separate 
 ```
 
 Inside our google or twilio utils, we would include functions that are helpful throughout the repo and not too specific to any given service. Inside the db utils it would be beneficial to include the standard database operations such as `INSERT`, `SELECT`, `UPDATE`, and `DELETE`. Defining each of these methods in a db utility is particularly useful when designing a CRUD API application. If more complicated `SELECT` statements are necessary, those can be written inside a given route's service or helpers file.
+
+## Tests
+
+For tests we use mocha and chai's assert library for consistent unit testing of all route services and helpers in addition to any utilities.
+
+The file structure of the test directory should follow the exact pattern of the src directory in addition of the `mocks/` directory in order to maintain consistency within the repo.
