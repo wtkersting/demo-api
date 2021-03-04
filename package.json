@@ -4,6 +4,8 @@
   "description": "Example architecture for a Node-Express API with winston logging, and Mocha + Chai unit tests",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon -L app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +25,17 @@
   "bugs": {
     "url": "https://github.com/wtkersting/demo-api/issues"
   },
-  "homepage": "https://github.com/wtkersting/demo-api#readme"
+  "homepage": "https://github.com/wtkersting/demo-api#readme",
+  "dependencies": {
+    "app-root-path": "^3.0.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^8.3.0",
+    "nodemon": "^2.0.7"
+  }
 }
