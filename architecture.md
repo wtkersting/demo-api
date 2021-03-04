@@ -55,9 +55,7 @@ This repository follows a strict filestructure in order to provide a logical tem
       └─ zUtils.test.js
 ```
 
-## src
-
-### routes
+## routes
 
 Each folder inside the routes directory represents a new route including at least 1 `controller.js` and 1 `service.js` file. Optionally if any helper functions are necessary, they can reside in a `helpers.js` file in the same directory
 
@@ -144,3 +142,25 @@ The reason to keep all logic inside of a service is to be able to expose the ser
 ### helpers.js
 
 The purpose of a helpers file is to provide a location to put functions that may be used across multiple service functions, particularly verbose sql queries, or even business-logic computations for a given route. These files are not always necessary, but they can be beneficial for increasing code readability and again, developer ergonomics and code-duplication reduction.
+
+## Utils
+
+Utils are files or functions which can be or are used across the whole repository. For example, if there is a common external service used from multiple api points or services, we would create a utility file with notation `externalServiceUtils.js` to interact with the external service.
+
+One example of an external service could be a foreign API such as Google or Twilio, but another example could be the layer we use to interact with a database.
+
+In the instance of a database utility, it would make sense to define a separate folder to host individual database table functons and utilities. Take, for example the following file structure:
+
+```
+.
+└─ utils/
+   |─ google.js
+   |─ twilio.js
+   |
+   └─db
+     |─ vehicles.js
+     |─ customers.js
+     └─ ...
+```
+
+Inside our google or twilio utils, we would include functions that are helpful throughout the repo and not too specific to any given service. Inside the db utils it would be beneficial to include the standard database operations such as `INSERT`, `SELECT`, `UPDATE`, and `DELETE`. Defining each of these methods in a db utility is particularly useful when designing a CRUD API application. If more complicated `SELECT` statements are necessary, those can be written inside a given route's service or helpers file.
