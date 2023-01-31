@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "allowJs": true,
+    "target": "es6",
+    "sourceMap": true,
+    "noImplicitAny": true
+  },
+  "include": ["./app.js", "./src/**/*"]
+}
