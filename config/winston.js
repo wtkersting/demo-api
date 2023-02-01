@@ -3,6 +3,7 @@ const appRoot = require("app-root-path")
 
 require("dotenv").config()
 
+// Testing adding comments
 const options = {
   file: {
     level: process.env.LOG_LEVEL || "debug",
