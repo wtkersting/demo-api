@@ -21,6 +21,8 @@ app.use("*", (req, res) => {
   res.sendStatus(404)
 })
 
+// Hello world
+
 app.listen(port, () => {
   winston.info(`Example app listening at http://localhost:${port}`)
 })
